@@ -18,7 +18,7 @@ let fecha = new Date();
 
 // CLASE CONSTRUCTOR PARA HACER EL REGISTRO DEL ESTUDIANTE
 
-class  Estudiante{
+class Estudiante{
     constructor(nombre, apellido, correo) {
         this.nombre = nombre;
         this.apellido = apellido;
@@ -31,32 +31,31 @@ class  Estudiante{
 
 // REGISTRO DEL ESTUDIANTE 
 
-let estudiantes = new Estudiante(prompt("Ingrese el nombre del estudiante").toLocaleUpperCase(), prompt("Ingrese el apellido del estudiante").toLocaleUpperCase(), prompt("Ingrese el correo electronico del estudiante").toLocaleUpperCase());
+let estudiante = new Estudiante(prompt("Ingrese el nombre del estudiante").toLocaleUpperCase(), prompt("Ingrese el apellido del estudiante").toLocaleUpperCase(), prompt("Ingrese el correo electronico del estudiante").toLocaleUpperCase());
 
-    while ((estudiantes.nombre == "") || (estudiantes.apellido == "") || (estudiantes.correo == "") || ((estudiantes.correo).search("@") == -1)) {
+    while ((estudiante.nombre == "") || (estudiante.apellido == "") || (estudiante.correo == "") || ((estudiante.correo).search("@") == -1)) {
 
         alert("Debes ingresar todos los campos para  que el registro sea exitoso.");
 
-        estudiantes = new Estudiante(prompt("Ingrese el nombre del estudiante").toLocaleUpperCase(), prompt("Ingrese el apellido del estudiante").toLocaleUpperCase(), prompt("Ingrese el correo electronico del estudiante").toLocaleUpperCase());
+        estudiante = new Estudiante(prompt("Ingrese el nombre del estudiante").toLocaleUpperCase(), prompt("Ingrese el apellido del estudiante").toLocaleUpperCase(), prompt("Ingrese el correo electronico del estudiante").toLocaleUpperCase());
     }
 
 // BIENVENIDA PARA EL ESTUDIANTE REGISTRADO
 
-alert(Bienvenido + " " + estudiantes.toString());
+alert( Bienvenido + " " + estudiante.toString());
 
 // ARRAY (lista de las opciones para el estudiante)
 let OpcionEstudiante = ["1.- Consultar Precios", "2.- Pagar Ruta ", "3.- Salir"];
 
 // OPERACION A REALIZAR
 
-alert("En  " + Empresa + ", " + " el estudiante tendra difernetes opciones: " + "\n" + OpcionEstudiante[0] + "\n" + OpcionEstudiante[1] + "\n" + OpcionEstudiante[2]);
+alert("En  " + Empresa + ", " + " el estudiante tendra diferentes opciones: " + "\n" + OpcionEstudiante[0] + "\n" + OpcionEstudiante[1] + "\n" + OpcionEstudiante[2]);
 
-//  ARRAY(BARRIOS)
+//  ARRAY(UBICACION)
 
 class Ubicacion {
-    constructor(localidad, barrio, precio) {
+    constructor(localidad, precio) {
         this.localidad = localidad;
-        this.barrio = barrio;
         this.precio = precio;
     }
     toString() {
@@ -83,21 +82,21 @@ function Operacion() {
     switch (operacion) {
         case 1:
 
-            alert(" Escoje una opcion: ");
+            alert(" CONSULTA TODOS LOS PRECIODS LAS RUTAS : ");
             consultaGeneral();
             volver();
 
             break;
         case 2:
 
-            consulta("Consultar Precios");
-            precios();
+            consulta(" precios ");
+            consulta();
             volver();
 
             break;
         case 3:
 
-            consulta(" pagar ruta ");
+            consulta(" pagar ");
             pagar();
             volver();
 
@@ -114,42 +113,44 @@ function Operacion() {
 
 function consultaGeneral() {
 
-    alert("El precio de las rutas son para la localidad de : " + "\n\n" + fecha.toUTCString() + "\n\n" + listaUbicacion[0].localidad + " Precio para  pagar la ruta : " + listaDivisas[0].precio + "El precio de las rutas son para la localidad de : " + "\n\n" + fecha.toUTCString() + "\n\n" + listaUbicacion[1].localidad + " Precio para  pagar la ruta : " + listaDivisas[1].precio + "El precio de las rutas son para la localidad de : " + "\n\n" + fecha.toUTCString() + "\n\n" + listaUbicacion[2].localidad + " Precio para  pagar la ruta : " + listaDivisas[2].precio + "El precio de las rutas son para la localidad de : " + "\n\n" + fecha.toUTCString() + "\n\n" + listaUbicacion[3].localidad + " Precio para  pagar la ruta : " + listaDivisas[3].precio + "El precio de las rutas son para la localidad de : " + "\n\n" + fecha.toUTCString() + "\n\n" + listaUbicacion[4].localidad + " Precio para  pagar la ruta : " + listaDivisas[4].precio + "El precio de las rutas son para la localidad de : " + "\n\n" + fecha.toUTCString() + "\n\n" + listaUbicacion[5].localidad + " Precio para  pagar la ruta : " + listaDivisas[5].precio + "El precio de las rutas son para la localidad de : " + "\n\n" + fecha.toUTCString() + "\n\n" + listaUbicacion[6].localidad + " Precio para  pagar la ruta : " + listaDivisas[6].precio)
+    alert("El precio de las rutas son para la localidad de : " + "\n\n" + fecha.toUTCString() + "\n\n" + listaUbicacion[0].localidad + " Precio para  pagar la ruta : " + listaUbicacion[0].precio + "El precio de las rutas son para la localidad de : " + "\n\n" + fecha.toUTCString() + "\n\n" + listaUbicacion[1].localidad + " Precio para  pagar la ruta : " +  listaUbicacion[1].precio + "El precio de las rutas son para la localidad de : " + "\n\n" + fecha.toUTCString() + "\n\n" + listaUbicacion[2].localidad + " Precio para  pagar la ruta : " +  listaUbicacion[2].precio + "El precio de las rutas son para la localidad de : " + "\n\n" + fecha.toUTCString() + "\n\n" + listaUbicacion[3].localidad + " Precio para  pagar la ruta : " +  listaUbicacion[3].precio + "El precio de las rutas son para la localidad de : " + "\n\n" + fecha.toUTCString() + "\n\n" +  listaUbicacion[4].localidad + " Precio para  pagar la ruta : " +  listaUbicacion[4].precio + "El precio de las rutas son para la localidad de : " + "\n\n" + fecha.toUTCString() + "\n\n" + listaUbicacion[5].localidad + " Precio para  pagar la ruta : " +  listaUbicacion[5].precio + "El precio de las rutas son para la localidad de : " + "\n\n" + fecha.toUTCString() + "\n\n" + listaUbicacion[6].localidad + " Precio para  pagar la ruta : " +  listaUbicacion[6].precio)
+}
 
 // FUNCION PAGAR SIN PARAMETROS 
 
+
 function pagar() {
 
-    let Pagar_ruta = parseInt(prompt("¿PARA DONDE DESEAS TU RUTA MIRA EL PRECIO ? (Ingresa el número de la opción correspondiente):" + "\n\n" + "1.- " + (listaUbicacion[0].nombre) + "\n" + "2.- " + (listaUbicacion[1].nombre) + "\n" + "3.- " + (llistaUbicacion[2].nombre) + "\n" + "4.- " + (listaUbicacion[3].nombre) + "\n" + "5.- " + (listaUbicacion[4].nombre) + "\n" + "6.- " + (listaUbicacion[5].nombre) + "\n" + "7.- " + (listaUbicacion[6].nombre) + "\n" + "8.- " + (listaUbicacion[7].nombre) + "\n" + "9.- Volver al Inicio"));
+    let Pagar_ruta = parseInt(prompt("¿PARA DONDE DESEAS TU RUTA? MIRA EL PRECIO : (Ingresa el número de la opción correspondiente):" + "\n\n" + "1.- " + (listaUbicacion[0].nombre) + "\n" + "2.- " + (listaUbicacion[1].nombre) + "\n" + "3.- " + (llistaUbicacion[2].nombre) + "\n" + "4.- " + (listaUbicacion[3].nombre) + "\n" + "5.- " + (listaUbicacion[4].nombre) + "\n" + "6.- " + (listaUbicacion[5].nombre) + "\n" + "7.- " + (listaUbicacion[6].nombre) + "\n" + "8.- " + (listaUbicacion[7].nombre) + "\n" + "9.- Volver al Inicio"));
 
     switch (Pagar_ruta) {
         case 1:
 
-            calcularPago("FONTIBON",listaUbicacion[0].precio);
+            alert("Pagar:" + listaUbicacion[0].precio);
             break;
 
         case 2:
-            calcularPago("USAQUEN", listaUbicacion[1].precio);
+            alert("Pagar:" +  listaUbicacion[1].precio);
             break;
 
         case 3:
-            calcularPago("KENNEDY", listaUbicacion[2].precio);
+            alert("Pagar:" + listaUbicacion[2].precio);
             break;
 
         case 4:
-            calcularPago("CHAPINERO", listaUbicacion[3].precio);
+            alert("Pagar:" + listaUbicacion[3].precio);
             break;
 
         case 5:
-            calcularPago("SANTAFE", listaUbicacion[4].precio);
+            alert("Pagar:" + listaUbicacion[4].precio);
             break;
 
         case 6:
-            calcularPago("SAN CRISTOBAL", listaUbicacion[5].precio);
+            alert("Pagar:" + listaUbicacion[5].precio);
             break;
 
         case 7:
-            calcularPago("USME",listaUbicacion[6].precio);
+            alert("Pagar:" + listaUbicacion[6].precio);
             break;
 
         case 8:
@@ -161,6 +162,7 @@ function pagar() {
             break;
     }
 }
+
 
 // VOLVER 
 
@@ -176,12 +178,20 @@ function volver() {
             break;
 
         default:
-            alert("Solo puedes elegir entre 1 y 2");
+            alert(" Elegir un numero entre 1 y 2");
             volver();
             break;
     }
 
 }
+
+
+
+// FUNCION SALIDA
+function salida() {
+    alert("GRACIAS POR PREFERIRNOS " + Empresa + ". HASTA PRONTO!");
+}
+
 
 //FUNCTION CONSULTA
 
@@ -195,36 +205,31 @@ function consulta(nombreConsulta){
     let San_CristobalTasa = "";
     let UsmeTasa = "";
 
-
     let fecha = new Date();
     let flecha = "--> ";
-    
+
 
     if (nombreConsulta === "pagar") {
 
-    FontibonTasa = listaUbicacion[0].precio;
-    UsaquenTasa = listaUbicacion[1].precio;
-    KennedyTasa = listaUbicacion[2].precio;
-    ChapineroTasa = listaUbicacion[3].precio;
-    SantafeTasa = listaUbicacion[4].precio;
-    San_CristobalTasa = listaUbicacion[5].precio;
-    UsmeTasa = listaUbicacion[6].precio;
+        FontibonTasa = listaUbicacion[0].precio;
+        UsaquenTasa = listaUbicacion[1].precio;
+        KennedyTasa = listaUbicacion[2].precio;
+        ChapineroTasa = listaUbicacion[3].precio;
+        SantafeTasa = listaUbicacion[4].precio;
+        San_CristobalTasa = listaUbicacion[5].precio;
+        UsmeTasa = listaUbicacion[6].precio;
 
     } else {
 
-        alert("puedes consultar bien los precios y despues pagar. gracias")
+        alert("consulte los precios de la ruta segun la localidad que necesite ")
+
+        consultaGeneral()
 
     }
+
+    alert("El precio de  las rutas para el 2023 " + nombreConsulta + " es: " + "\n\n" + fecha.toUTCString() + "\n\n" + flecha + ("fONTIBON = " + FontibonTasa.toString()) + "\n" + flecha + ("USAQUEN = " + UsaquenTasa.toString()) + "\n" + flecha + ("KENNEDY= " + KennedyTasa.toString()) + "\n" + flecha + ("CHAPINERO = " + ChapineroTasa.toString()) + "\n" + flecha + ("SANTAFE = " + SantafeTasa.toString()) + "\n" + flecha + ("SAN CRISTOBAL = " + San_CristobalTasa.toString()) + "\n" + flecha + ("USME = " + UsmeTasa.toString()));
 }
 
-alert("El precio de  las rutas para el 2023 " + nombreConsulta + " es: " + "\n\n" + fecha.toUTCString() + "\n\n" + flecha + ("fONTIBON = " + FontibonTasa.toString()) + "\n" + flecha + ("USAQUEN = " + UsaquenTasa.toString()) + "\n" + flecha + ("KENNEDY= " + KennedyTasa.toString()) + "\n" + flecha + ("CHAPINERO = " + ChapineroTasa.toString()) + "\n" + flecha + ("SANTAFE = " + SantafeTasa.toString()) + "\n" + flecha + ("SAN CRISTOBAL = " + San_CristobalTasa.toString()) + "\n" + flecha + ("USME = " + UsmeTasa.toString()));
-
-
-
-// FUNCION SALIDA
-function salida() {
-    alert("GRACIAS POR PREFERIRNOS " + Empresa + ". HASTA PRONTO!");
-}
 
 // OPCIONESTUDIANTE
 
@@ -239,5 +244,3 @@ while (start !== 2) {
 //  (SALIDA)
 
 salida();
-
-}
